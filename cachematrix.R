@@ -3,6 +3,24 @@
 
 ## The new concept intrdouced here is also "<<-" for global use of varibales
 
+## Functions that cache the inverse of a matrix
+##
+## Usage example:
+##
+## > source('cachematrix.R')
+## > m <- makeCacheMatrix(matrix(c(0, 1, 1, 0), c(2, 2)))
+## > cacheSolve(m)
+## [,1] [,2]
+## [1,]    0    1
+## [2,]    1    0
+
+## Create a special "matrix", which is a list containing
+## a function to
+##   - set the value of the matrix
+##   - get the value of the matrix
+##   - set the value of the inverse matrix
+##   - get the value of the inverse matrix
+
 makeCacheMatrix <- function(x = matrix()) {
         m <- NULL
         set <- function(y) {
